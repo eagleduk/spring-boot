@@ -8,9 +8,9 @@ public class AppGamingBasicJava {
 
     public static void main(String[] args) {
 
-        var marioGame = new MarioGame();
-        var superContra = new SuperGontraGame();
-        var gameRunner = new GameRunner(superContra);
+        // var game = new MarioGame();
+        var game = new SuperGontraGame();
+        var gameRunner = new GameRunner(game);
         gameRunner.run();
     }
 }

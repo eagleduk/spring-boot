@@ -3,9 +3,9 @@ package com.sample.springboot.game;
 public class GameRunner {
 
 //    private MarioGame game;
-    private SuperGontraGame game;
+    private GamingConsole game;
 
-    public GameRunner(SuperGontraGame g) {
+    public GameRunner(GamingConsole g) {
         this.game = g;
     }
 

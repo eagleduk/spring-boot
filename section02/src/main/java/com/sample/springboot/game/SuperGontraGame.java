@@ -1,6 +1,6 @@
 package com.sample.springboot.game;
 
-public class SuperGontraGame {
+public class SuperGontraGame implements GamingConsole {
     public void up() {
         System.out.println("Jump");
     }
