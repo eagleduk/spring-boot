@@ -34,3 +34,7 @@
 3. Spring Bean
 
     - IOC Container(Spring Container) 가 관리한다.
+
+> [!NOTE]
+> ### Try - with - resources
+> try - catch - finally 에서의 자원 반환 누락을 더욱 효과적으로 방지할 수 있다.
