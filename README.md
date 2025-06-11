@@ -4,3 +4,4 @@
 
 - Tightly Coupled
 - Loose Coupling
+- Spring Context
