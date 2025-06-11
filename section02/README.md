@@ -17,3 +17,20 @@
 > ### record
 > 1. Data 목적의 Class 임을 명시
 > 2. 생성자 및 Getter,Setter를 자동으로 생성해 준다.
+
+## Java Object
+
+1. Java Bean
+
+   - 매개변수가 없는 생성자
+   - Setter, Getter
+   - Serializable 참조
+
+2. POJO(Plain Old Java Object)
+    
+    - 생성자가 없다
+    - 모든 객체는 POJO가 된다
+
+3. Spring Bean
+
+    - IOC Container(Spring Container) 가 관리한다.
