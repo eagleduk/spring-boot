@@ -1,5 +1,6 @@
 package com.sample.springboot.game;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -8,7 +9,8 @@ public class GameRunner {
 //    private MarioGame game;
     private GamingConsole game;
 
-    public GameRunner(GamingConsole g) {
+
+    public GameRunner(@Qualifier("marioGame") GamingConsole g) {
         this.game = g;
     }
 
