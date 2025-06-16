@@ -1,5 +1,8 @@
 package com.sample.springboot.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class GameRunner {
 
 //    private MarioGame game;

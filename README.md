@@ -5,3 +5,7 @@
 - Tightly Coupled
 - Loose Coupling
 - Spring Context
+
+## [section03](section03)
+
+- auto-wiring
