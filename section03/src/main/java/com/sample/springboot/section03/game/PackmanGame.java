@@ -1,4 +1,4 @@
-package com.sample.springboot.game;
+package com.sample.springboot.section03.game;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

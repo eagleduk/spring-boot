@@ -1,11 +1,7 @@
-package com.sample.springboot.dependency;
+package com.sample.springboot.section03.dependency;
 
-import com.sample.springboot.game.GameRunner;
-import com.sample.springboot.game.GamingConsole;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ComponentScans;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
@@ -77,7 +73,7 @@ public class DependencyApplication {
 
             Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
 
-            System.out.println(context.getBean("baseClass"));
+            System.out.println(context.getBean(BaseClass.class));
         }
     }
 }

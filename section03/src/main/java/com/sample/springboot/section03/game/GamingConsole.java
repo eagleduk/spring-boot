@@ -1,4 +1,4 @@
-package com.sample.springboot.game;
+package com.sample.springboot.section03.game;
 
 public interface GamingConsole {
     void up();
