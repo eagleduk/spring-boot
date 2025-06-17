@@ -15,3 +15,4 @@
 
 - Lazy initialization
 - Scope
+- PostConstructor | PreDestroy
