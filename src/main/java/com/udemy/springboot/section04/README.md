@@ -21,3 +21,9 @@
   - ex) 데이터베이스에서 데이터를 가져와 초기화
 - `PreDestroy`에서는 보유하고 있던 리소스를 해제하는데 사용
   - ex) 데이터베이스 연결 해제
+
+## CDI
+
+- Jakarta EE에 속한 규격. Spring Framework에서 지원
+- `@Injection` == `@Autowired`
+- `@Name` == `@Component`
