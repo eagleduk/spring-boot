@@ -12,3 +12,5 @@
 - Dependency
 
 ## [section04](src/main/java/com/sample/springboot/section04)
+
+- Lazy initialization
