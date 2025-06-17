@@ -31,3 +31,11 @@
 ## Spring Config XML
 
 - 지금은 사용되고 있지 않은 XML Spring 환경설정
+
+## Stereotype Annotation
+
+- `@Component` 어노테이션은 모든 클래스에 사용 가능하다.
+- 클래스별 더욱 구체적인 어노테이션으로 나눌 수 있다.
+  - `@Service`: 논리 비즈니스가 정의된 클래스
+  - `@Controller`: 웹 컨트롤러가 정의된 클래스
+  - `@Repository`: 데이터를 저장하거나 검색하거나 조작하는 클래스
