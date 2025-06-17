@@ -17,3 +17,4 @@
 - Scope
 - PostConstructor | PreDestroy
 - jakarta `C`ontext and `D`ependency `I`njection
+- Spring Config XML

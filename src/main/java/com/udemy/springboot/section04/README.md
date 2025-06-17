@@ -27,3 +27,7 @@
 - Jakarta EE에 속한 규격. Spring Framework에서 지원
 - `@Injection` == `@Autowired`
 - `@Name` == `@Component`
+
+## Spring Config XML
+
+- 지금은 사용되고 있지 않은 XML Spring 환경설정
