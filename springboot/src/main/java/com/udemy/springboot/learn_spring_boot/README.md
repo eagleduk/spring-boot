@@ -5,3 +5,6 @@
 
 2. ConfigurationProperties
     - `application.properties`의 입력 값을 `@ConfigurationProperties`가 설정된 Bean(Component)에 저장한다.
+
+3. Actuator
+    - 서버의 metrix 정보를 알 수 있다.
