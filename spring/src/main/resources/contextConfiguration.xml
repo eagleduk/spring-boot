@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="name" class="java.lang.String">
+        <constructor-arg value="name" />
+    </bean>
+
+    <bean id="age" class="java.lang.Integer">
+        <constructor-arg value="33" />
+    </bean>
+
+    <bean id="game" class="com.udemy.spring.section02.game.MarioGame" />
+
+    <bean id="gameRunner" class="com.udemy.spring.section02.game.GameRunner">
+        <constructor-arg ref="game" />
+    </bean>
+</beans>

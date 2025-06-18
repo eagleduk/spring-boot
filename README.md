@@ -1,17 +1,17 @@
 [GitHub](https://github.com/in28minutes/master-spring-and-spring-boot)
 
-## [section02](src/main/java/com/sample/springboot/section02)
+## [section02](spring/src/main/java/com/udemy/spring/section02)
 
 - Tightly Coupled
 - Loose Coupling
 - Spring Context
 
-## [section03](src/main/java/com/sample/springboot/section03)
+## [section03](spring/src/main/java/com/udemy/spring/section03)
 
 - auto-wiring
 - Dependency
 
-## [section04](src/main/java/com/sample/springboot/section04)
+## [section04](spring/src/main/java/com/udemy/spring/section04)
 
 - Lazy initialization
 - Scope
