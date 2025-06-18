@@ -21,3 +21,7 @@
 - Stereotype Annotation
 
 ## [section05](springboot/src/main/java/com/udemy/springboot/learn_spring_boot)
+
+- Spring Boot Starter Project
+- Auto Configuration
+- DevTools
