@@ -8,3 +8,8 @@
 
 3. Actuator
     - 서버의 metrix 정보를 알 수 있다.
+
+> [!NOTE]
+> 
+> @SpringBootApplication = @SpringBootConfiguration + @EnableAutoConfiguration + @ComponentScan
+> 
