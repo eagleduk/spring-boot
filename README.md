@@ -25,3 +25,4 @@
 - Spring Boot Starter Project
 - Auto Configuration
 - DevTools
+- Deploying
