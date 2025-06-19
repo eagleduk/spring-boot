@@ -9,3 +9,8 @@
 
 - 가장 기본적인 SQL Query 를 사용한다.
 - 많은 코드 작성이 필요하다.
+
+## Spring JPA
+
+- SQL Query 를 사용하지 않는다.
+- `Spring Jdbc` 보다 작은 코드 작성

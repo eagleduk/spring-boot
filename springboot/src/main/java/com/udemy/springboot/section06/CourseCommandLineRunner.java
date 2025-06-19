@@ -1,6 +1,7 @@
 package com.udemy.springboot.section06;
 
 import com.udemy.springboot.section06.course.Course;
+import com.udemy.springboot.section06.jpa.JpaRepository;
 import com.udemy.springboot.section06.springjdbc.SpringJdbcRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -9,14 +10,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class CourseCommandLineRunner implements CommandLineRunner {
 
+//    @Autowired
+//    private SpringJdbcRepository repository;
+
     @Autowired
-    private SpringJdbcRepository repository;
+    private JpaRepository repository;
 
     @Override
     public void run(String... args) throws Exception {
-        repository.insert(new Course(1, "Learn Java", "SJ.LEE"));
-        repository.insert(new Course(2, "Learn Javascript", "SJ.LEE"));
-        repository.insert(new Course(3, "Learn Python", "SJ.LEE"));
+        repository.insert(new Course(1, "Learn Java JPA", "SJ.LEE"));
+        repository.insert(new Course(2, "Learn Javascript JPA", "SJ.LEE"));
+        repository.insert(new Course(3, "Learn Python JPA", "SJ.LEE"));
 
         repository.deleteById(1);
 

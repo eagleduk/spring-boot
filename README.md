@@ -31,3 +31,4 @@
 
 - H2 Database
 - Spring Jdbc
+- Spring JPA
