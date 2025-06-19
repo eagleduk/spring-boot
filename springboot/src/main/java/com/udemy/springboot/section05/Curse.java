@@ -1,4 +1,4 @@
-package com.udemy.springboot.learn_spring_boot;
+package com.udemy.springboot.section05;
 
 public class Curse {
     private long id;

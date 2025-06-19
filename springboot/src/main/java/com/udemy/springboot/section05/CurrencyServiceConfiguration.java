@@ -1,4 +1,4 @@
-package com.udemy.springboot.learn_spring_boot;
+package com.udemy.springboot.section05;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

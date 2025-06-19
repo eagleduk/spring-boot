@@ -20,7 +20,7 @@
 - Spring Config XML
 - Stereotype Annotation
 
-## [section05](springboot/src/main/java/com/udemy/springboot/learn_spring_boot)
+## [section05](springboot/src/main/java/com/udemy/springboot/section05)
 
 - Spring Boot Starter Project
 - Auto Configuration

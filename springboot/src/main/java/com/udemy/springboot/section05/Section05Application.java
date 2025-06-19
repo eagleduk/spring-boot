@@ -1,13 +1,13 @@
-package com.udemy.springboot.learn_spring_boot;
+package com.udemy.springboot.section05;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LearnSpringBootApplication {
+public class Section05Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LearnSpringBootApplication.class, args);
+		SpringApplication.run(Section05Application.class, args);
 	}
 
 }

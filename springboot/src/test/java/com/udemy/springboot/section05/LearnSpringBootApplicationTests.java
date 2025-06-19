@@ -1,4 +1,4 @@
-package com.udemy.springboot.learn_spring_boot;
+package com.udemy.springboot.section05;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

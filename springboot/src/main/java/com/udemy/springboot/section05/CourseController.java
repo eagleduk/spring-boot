@@ -1,4 +1,4 @@
-package com.udemy.springboot.learn_spring_boot;
+package com.udemy.springboot.section05;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
