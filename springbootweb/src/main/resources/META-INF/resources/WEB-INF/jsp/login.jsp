@@ -20,5 +20,8 @@
         </div>
         <input type="submit" />
     </form>
+    <div>
+        ${error}
+    </div>
 </body>
 </html>
