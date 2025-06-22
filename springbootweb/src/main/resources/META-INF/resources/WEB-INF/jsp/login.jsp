@@ -5,6 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-
+    ${name }, Welcome to login Page!
 </body>
 </html>

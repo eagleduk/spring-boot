@@ -35,3 +35,6 @@
 - Spring Data JPA
 
 ## [section07](springbootweb/src/main/java/com/udemy/springbootweb/section07)
+
+- JSP
+- RequestParam
