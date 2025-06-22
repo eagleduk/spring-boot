@@ -16,3 +16,8 @@
 - `Request` 는 요청을 하는 동안에만 사용 가능
 - `Model`은 반환하는 페이지에서만 사용 가능
 - `Session`은 언제 어디서나 사용 가능
+
+## jstl
+
+- jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api
+- org.glassfish.web:jakarta.servlet.jsp.jstl

@@ -8,6 +8,7 @@
     <div>
         Welcome, ${name}
     </div>
+    <hr />
     <div>
         <a href="/list-todo">
             Your Todo
