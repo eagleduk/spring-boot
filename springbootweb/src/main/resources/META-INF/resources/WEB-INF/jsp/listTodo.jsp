@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo</title>
+</head>
+<body>
+    <div>
+        Todo
+    </div>
+    <div>
+        ${todo}
+    </div>
+</body>
+</html>
