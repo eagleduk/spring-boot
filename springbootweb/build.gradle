@@ -26,6 +26,7 @@ dependencies {
 	implementation("jakarta.el:jakarta.el-api:6.0.1")
 	implementation("jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.2")
 	implementation("org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1")
+	implementation("org.webjars:bootstrap:5.3.7")
 }
 
 tasks.named('test') {

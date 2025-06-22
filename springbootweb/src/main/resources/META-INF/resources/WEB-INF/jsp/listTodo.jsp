@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Todo</title>
+    <link rel='stylesheet' href='/webjars/bootstrap/5.3.7/css/bootstrap.min.css'>
 </head>
 <body>
     <div>
@@ -48,5 +49,7 @@
         </tbody>
 
     </table>
+
+    <script src="/webjars/bootstrap/5.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
