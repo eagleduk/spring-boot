@@ -6,7 +6,7 @@
 </head>
 <body>
     <div>
-        Todo
+        ${name}, Todo
     </div>
     <div>
         ${todo}

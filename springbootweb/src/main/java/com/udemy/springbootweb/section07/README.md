@@ -10,3 +10,9 @@
 ## Logger
 
 - **aplication.properties**에 `log.level.[PACKAGE]`를 선택하여 로깅하고자 하는 패키지를 선택할 수 있다.
+
+## Request vs Model vs Session
+
+- `Request` 는 요청을 하는 동안에만 사용 가능
+- `Model`은 반환하는 페이지에서만 사용 가능
+- `Session`은 언제 어디서나 사용 가능
