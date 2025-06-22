@@ -5,6 +5,20 @@
     <title>Title</title>
 </head>
 <body>
-    ${name }, Welcome to login Page!
+    <form method="POST">
+        <div>
+            <label>
+                Name:
+            </label>
+            <input type="text" name="name" />
+        </div>
+        <div>
+            <label>
+                Password:
+            </label>
+            <input type="password" name="password" />
+        </div>
+        <input type="submit" />
+    </form>
 </body>
 </html>
