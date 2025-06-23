@@ -1,6 +1,8 @@
 package com.udemy.springbootweb.section07.service;
 
 import com.udemy.springbootweb.section07.bean.Todo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -9,6 +11,8 @@ import java.util.List;
 
 @Service
 public class TodoService {
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     private static List<Todo> todo = new ArrayList<>();
 
@@ -20,5 +24,10 @@ public class TodoService {
 
     public List<Todo> findByUserName() {
         return todo;
+    }
+
+    public void addTodo(String description) {
+        logger.info("todo: {}", todo.size());
+        todo.add(new Todo(todo.size()+1, "SJ.Lee", description, LocalDate.now().plusMonths(11), false));
     }
 }

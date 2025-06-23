@@ -2,26 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login</title>
+    <link rel='stylesheet' href='/webjars/bootstrap/5.3.7/css/bootstrap.min.css'>
 </head>
 <body>
-    <form method="POST">
+    <div class="container">
+        <form method="POST">
+            <div>
+                <label>
+                    Name:
+                </label>
+                <input type="text" name="name" />
+            </div>
+            <div>
+                <label>
+                    Password:
+                </label>
+                <input type="password" name="password" />
+            </div>
+            <input type="submit" class="btn btn-success"/>
+        </form>
         <div>
-            <label>
-                Name:
-            </label>
-            <input type="text" name="name" />
+            ${error}
         </div>
-        <div>
-            <label>
-                Password:
-            </label>
-            <input type="password" name="password" />
-        </div>
-        <input type="submit" />
-    </form>
-    <div>
-        ${error}
     </div>
+    <script src="/webjars/bootstrap/5.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
