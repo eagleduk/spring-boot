@@ -21,3 +21,11 @@
 
 - jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api
 - org.glassfish.web:jakarta.servlet.jsp.jstl
+
+## bootstrap
+
+- org.webjars:bootstrap:5.3.7
+
+## validation
+
+- org.springframework.boot:spring-boot-starter-validation

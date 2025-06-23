@@ -26,8 +26,8 @@ public class TodoService {
         return todo;
     }
 
-    public void addTodo(String description) {
+    public void addTodo(String username, String description, LocalDate targetDate, boolean done) {
         logger.info("todo: {}", todo.size());
-        todo.add(new Todo(todo.size()+1, "SJ.Lee", description, LocalDate.now().plusMonths(11), false));
+        todo.add(new Todo(todo.size()+1, username, description, targetDate, done));
     }
 }

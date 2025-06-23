@@ -1,11 +1,16 @@
 package com.udemy.springbootweb.section07.bean;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Size;
+
 import java.time.LocalDate;
 
 public class Todo {
 
     private int id;
     private String username;
+
+    @Size(min=8, message="Too Short.")
     private String description;
     private LocalDate targetDate;
     private boolean done;
