@@ -40,14 +40,14 @@ public class TodoController {
     @RequestMapping(value="add-todo", method = RequestMethod.GET)
     public String addTodoPage(ModelMap model) {
         model.put("todo", new Todo(0, (String) model.get("name"), "", LocalDate.now(), false));
-        return "addTodo";
+        return "todo";
     }
 
     @RequestMapping(value="add-todo", method = RequestMethod.POST)
-    public String addTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
+    public String addTodo(@Valid Todo todo, BindingResult result) {
 
         if(result.hasErrors()) {
-            return "addTodo";
+            return "todo";
         }
 
         todoService.addTodo(todo.getUsername(), todo.getDescription(), todo.getTargetDate(), todo.isDone());
@@ -58,6 +58,24 @@ public class TodoController {
     public String deleteTodo(@RequestParam int id) {
 
         todoService.removeById(id);
+
+        return "redirect:list-todo";
+    }
+
+    @RequestMapping(value="update-todo", method = RequestMethod.GET)
+    public String updateTodoPage(ModelMap model, @RequestParam int id) {
+        Todo todo = todoService.findById(id);
+        model.put("todo", todo);
+        return "todo";
+    }
+
+    @RequestMapping(value="update-todo", method = RequestMethod.POST)
+    public String updateTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
+
+        if(result.hasErrors()) {
+            return "todo";
+        }
+        todoService.updateTodo(todo);
 
         return "redirect:list-todo";
     }

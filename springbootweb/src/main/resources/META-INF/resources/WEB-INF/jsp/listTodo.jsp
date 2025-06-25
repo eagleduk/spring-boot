@@ -13,7 +13,7 @@
             Todos
         </h1>
 
-        <table>
+        <table class="table">
             <thead>
                 <tr>
                     <th>
@@ -23,10 +23,15 @@
                         Description
                     </th>
                     <th>
+                        User
+                    </th>
+                    <th>
                         Target Date
                     </th>
                     <th>
                         Is Done?
+                    </th>
+                    <th>
                     </th>
                 </tr>
             </thead>
@@ -41,12 +46,18 @@
                             ${todo.description}
                         </td>
                         <td>
+                            ${todo.username}
+                        </td>
+                        <td>
                             ${todo.targetDate}
                         </td>
                         <td>
                             ${todo.done}
                         </td>
                         <td>
+                            <a class="btn btn-warning" href="update-todo?id=${todo.id}">
+                                Update
+                            </a>
                             <a class="btn btn-danger" href="delete-todo?id=${todo.id}">
                                 Delete
                             </a>

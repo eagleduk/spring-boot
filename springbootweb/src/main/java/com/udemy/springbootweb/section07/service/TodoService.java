@@ -1,14 +1,18 @@
 package com.udemy.springbootweb.section07.service;
 
 import com.udemy.springbootweb.section07.bean.Todo;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 @Service
 public class TodoService {
@@ -26,7 +30,21 @@ public class TodoService {
     }
 
     public List<Todo> findByUserName() {
+        todo.sort((a, b) -> {
+            if (a.getId() == b.getId()) return 0;
+            else if (a.getId() < b.getId()) return 1;
+            return -1;
+        });
         return todo;
+    }
+
+    public Todo findById(int i) {
+        Predicate<? super Todo> predicate = todo -> todo.getId() == i;
+
+        Optional<Todo> s = todo.stream().filter(predicate).findFirst();
+
+        return s.orElseGet(() -> new Todo(id++, "", "", null, false));
+
     }
 
     public void addTodo(String username, String description, LocalDate targetDate, boolean done) {
@@ -39,5 +57,11 @@ public class TodoService {
         Predicate<? super Todo> predicate = todo -> todo.getId() == i;
 
         todo.removeIf(predicate);
+    }
+
+    public void updateTodo(@Valid Todo t) {
+        int id = t.getId();
+        removeById(id);
+        todo.add(t);
     }
 }
