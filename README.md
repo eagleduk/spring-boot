@@ -42,3 +42,4 @@
 - Request vs Model vs Session
 - jstl
 - Spring boot starter validation
+- JSP Fragment

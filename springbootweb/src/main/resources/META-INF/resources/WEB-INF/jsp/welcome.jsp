@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
-    <link rel='stylesheet' href='/webjars/bootstrap/5.3.7/css/bootstrap.min.css'>
-</head>
+<%@include file="common/header.jspf" %>
+
 <body>
+
+    <%@include file="common/navbar.jspf" %>
 
     <div class="container">
         <h1>
@@ -16,6 +13,6 @@
         </a>
     </div>
 
-    <script src="/webjars/bootstrap/5.3.7/js/bootstrap.min.js"></script>
 </body>
-</html>
+
+<%@include file="common/footer.jspf" %>
