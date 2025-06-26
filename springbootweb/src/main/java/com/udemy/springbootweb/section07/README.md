@@ -31,3 +31,9 @@
 - org.springframework.boot:spring-boot-starter-validation
 
 ## JSP Fragment
+
+## Spring boot Security
+
+- org.springframework.boot:spring-boot-starter-security
+- 자동으로 로그인페이지, 로그아웃을 제공해 준다.
+- 기본 유저는 `user`, 패스워드는 로그에 나타난다.
