@@ -6,6 +6,8 @@ import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -29,9 +31,17 @@ public class TodoController {
         this.todoService = todoService;
     }
 
+    private String getUsername() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return authentication.getName();
+    }
+
     @RequestMapping("list-todo")
     public String listTodo(ModelMap model) {
-        List<Todo> todo = todoService.findByUserName();
+
+        String username = getUsername();
+
+        List<Todo> todo = todoService.findByUserName(username);
 
         model.put("todo", todo);
         return "listTodo";
@@ -39,7 +49,7 @@ public class TodoController {
 
     @RequestMapping(value="add-todo", method = RequestMethod.GET)
     public String addTodoPage(ModelMap model) {
-        model.put("todo", new Todo(0, (String) model.get("name"), "", LocalDate.now(), false));
+        model.put("todo", new Todo(0, getUsername(), "", LocalDate.now(), false));
         return "todo";
     }
 

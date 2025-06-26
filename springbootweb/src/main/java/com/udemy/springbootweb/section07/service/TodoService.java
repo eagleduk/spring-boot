@@ -29,13 +29,14 @@ public class TodoService {
         todo.add(new Todo(id++, "SJ.Lee", "Learn Python", LocalDate.now().plusMonths(18), false));
     }
 
-    public List<Todo> findByUserName() {
-        todo.sort((a, b) -> {
+    public List<Todo> findByUserName(String username) {
+
+        Predicate<Todo> predicate = todo -> todo.getUsername().equalsIgnoreCase(username);
+        return todo.stream().filter(predicate).sorted((a, b) -> {
             if (a.getId() == b.getId()) return 0;
             else if (a.getId() < b.getId()) return 1;
             return -1;
-        });
-        return todo;
+        }).toList();
     }
 
     public Todo findById(int i) {
