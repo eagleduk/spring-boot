@@ -44,3 +44,4 @@
 - Spring boot starter validation
 - JSP Fragment
 - Spring boot Security
+- H2 Database
