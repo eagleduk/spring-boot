@@ -48,3 +48,7 @@
 - JPA
 
 ## [section08](springbootweb/src/main/java/com/udemy/springbootweb/section08)
+
+- DispatcherServlet
+- ResponseBody, JacksonHttpMessageConverters
+- Error Mapping
