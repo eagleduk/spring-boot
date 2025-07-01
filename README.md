@@ -52,3 +52,5 @@
 - DispatcherServlet
 - ResponseBody, JacksonHttpMessageConverters
 - Error Mapping
+- Response Status Code
+- ResponseEntity
