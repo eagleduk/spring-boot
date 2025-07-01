@@ -1,9 +1,12 @@
 package com.udemy.springbootweb.section07.service;
 
 import com.udemy.springbootweb.section07.bean.Todo;
+import com.udemy.springbootweb.section07.repository.TodoRepository;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

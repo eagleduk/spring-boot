@@ -45,3 +45,4 @@
 - JSP Fragment
 - Spring boot Security
 - H2 Database
+- JPA
