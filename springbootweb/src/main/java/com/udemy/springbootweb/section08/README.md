@@ -39,3 +39,9 @@
 - Parameter Version(Amazon)
 - Custom Header(MicroSoft)
 - Media Type(GitHub)
+
+## `H`ypermedia `A`s `T`he `E`ngine `O`f `A`pplication `S`tate
+
+- `HATEOAS`
+- API 요청 이후 후속 작업을 위한 API Endpoint 를 함께 반환하는 것
+- 원하는 만큼의 후속 작업을 위한 Endpoint 를 반환할 수 있다.
