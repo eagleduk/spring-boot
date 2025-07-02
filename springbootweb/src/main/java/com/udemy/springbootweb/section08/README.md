@@ -50,3 +50,8 @@
 
 - 응답 데이터의 키 값을 변경할 수 있다.
 - 응답 데이터의 필터를 조정할 수 있다.
+
+## Server Status Informations
+
+- org.springframework.boot:spring-boot-starter-actuator
+- org.springframework.data:spring-data-rest-hal-explorer
