@@ -25,3 +25,5 @@
 - noContent
 - badRequest
 - notFound
+
+## Exception Handler

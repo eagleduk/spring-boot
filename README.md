@@ -54,3 +54,4 @@
 - Error Mapping
 - Response Status Code
 - ResponseEntity
+- Exception Handler
