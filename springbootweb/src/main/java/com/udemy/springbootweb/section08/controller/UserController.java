@@ -26,7 +26,7 @@ public class UserController {
 
     @GetMapping("/users/{id}")
     public User findById(@PathVariable Integer id) {
-        User user = userService.findUser(id);
+        User user = userService.findUserById(id);
         if(user == null) {
             throw new UserNotFoundException("Not Found: " + id);
         }
@@ -36,10 +36,15 @@ public class UserController {
 
     @PostMapping("/users")
     public ResponseEntity<User> createUser(@RequestBody User user) {
-        User newUser = userService.createUser(user);
+        User newUser = userService.save(user);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newUser.getId()).toUri();
 
         return ResponseEntity.created(location).body(newUser);
+    }
+
+    @DeleteMapping("/users/{id}")
+    public void delete(@PathVariable Integer id) {
+        userService.deleteUserById(id);
     }
 }

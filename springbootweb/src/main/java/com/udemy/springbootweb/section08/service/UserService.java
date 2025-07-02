@@ -1,7 +1,6 @@
 package com.udemy.springbootweb.section08.service;
 
 import com.udemy.springbootweb.section08.bean.User;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -19,16 +18,22 @@ public class UserService {
         return users;
     }
 
-    public User findUser(Integer id) {
+    public User findUserById(Integer id) {
         Predicate<User> predicate = user -> user.getId().equals(id);
         return users.stream().filter(predicate).findFirst().orElse(null);
     }
 
-    public User createUser(User user) {
+    public User save(User user) {
         user.setId(count++);
 
         users.add(user);
 
         return user;
+    }
+
+    public void deleteUserById(Integer id) {
+        Predicate<User> predicate = user -> user.getId().equals(id);
+        User target = users.stream().filter(predicate).findFirst().orElse(null);
+        users.remove(target);
     }
 }
