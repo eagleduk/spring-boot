@@ -29,7 +29,7 @@ public class PostController {
         if(user == null)
             throw new UserNotFoundException("Not Found User: " + id);
 
-        return postRepository.findByUser(user);
+        return user.getPosts();
     }
 
     @PostMapping("/users/{id}/posts")

@@ -1,12 +1,15 @@
 package com.udemy.springbootweb.section08.bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity(name = "_user")
 public class User {
@@ -20,6 +23,10 @@ public class User {
 
     @Past(message = "Only Past.")
     private LocalDate birthDay;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private List<Post> posts;
 
     public User() {}
 
@@ -51,6 +58,10 @@ public class User {
 
     public void setBirthDay(LocalDate birthDay) {
         this.birthDay = birthDay;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
     }
 
     @Override
