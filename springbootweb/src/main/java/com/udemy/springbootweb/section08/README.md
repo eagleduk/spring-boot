@@ -32,3 +32,10 @@
 
 - org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.9
 - /swagger-ui.html
+
+## API Versioning
+
+- URI Version(Twitter)
+- Parameter Version(Amazon)
+- Custom Header(MicroSoft)
+- Media Type(GitHub)
