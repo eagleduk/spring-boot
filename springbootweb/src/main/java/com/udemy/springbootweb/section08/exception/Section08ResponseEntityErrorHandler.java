@@ -23,7 +23,7 @@ public class Section08ResponseEntityErrorHandler extends ResponseEntityException
         return new ResponseEntity<ExceptionModel>(exception, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @ExceptionHandler(UserNotFoundException.class)
+    @ExceptionHandler({UserNotFoundException.class, PostNotFoundException.class})
     public final ResponseEntity<ExceptionModel> handleUserNotFoundException(Exception ex, WebRequest request) throws Exception {
         ExceptionModel exception = new ExceptionModel(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
         return new ResponseEntity<ExceptionModel>(exception, HttpStatus.NOT_FOUND);

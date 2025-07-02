@@ -1,12 +1,18 @@
 package com.udemy.springbootweb.section08.bean;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
+@Entity(name = "_user")
 public class User {
 
+    @Id
+    @GeneratedValue
     private Integer id;
 
     @Size(min = 2, message = "Too Short.")
@@ -14,6 +20,8 @@ public class User {
 
     @Past(message = "Only Past.")
     private LocalDate birthDay;
+
+    public User() {}
 
     public User(Integer id, String name, LocalDate birthDay) {
         this.id = id;

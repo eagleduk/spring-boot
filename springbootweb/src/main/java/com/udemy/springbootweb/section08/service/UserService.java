@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
 
 @Component
@@ -14,13 +15,13 @@ public class UserService {
 
     private final List<User> users = new ArrayList<>();
 
-    public List<User> findUser() {
+    public List<User> findAll() {
         return users;
     }
 
-    public User findUserById(Integer id) {
+    public Optional<User> findById(Integer id) {
         Predicate<User> predicate = user -> user.getId().equals(id);
-        return users.stream().filter(predicate).findFirst().orElse(null);
+        return users.stream().filter(predicate).findFirst();
     }
 
     public User save(User user) {
@@ -31,7 +32,7 @@ public class UserService {
         return user;
     }
 
-    public void deleteUserById(Integer id) {
+    public void deleteById(Integer id) {
         Predicate<User> predicate = user -> user.getId().equals(id);
         User target = users.stream().filter(predicate).findFirst().orElse(null);
         users.remove(target);
