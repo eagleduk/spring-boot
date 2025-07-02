@@ -3,6 +3,7 @@ package com.udemy.springbootweb.section08.controller;
 import com.udemy.springbootweb.section08.bean.User;
 import com.udemy.springbootweb.section08.exception.UserNotFoundException;
 import com.udemy.springbootweb.section08.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -35,7 +36,8 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public ResponseEntity<User> createUser(@RequestBody User user) {
+    public ResponseEntity<User> createUser(
+            @Valid @RequestBody User user) {
         User newUser = userService.save(user);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newUser.getId()).toUri();
