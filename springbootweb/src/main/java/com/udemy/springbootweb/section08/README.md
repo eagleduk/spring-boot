@@ -45,3 +45,8 @@
 - `HATEOAS`
 - API 요청 이후 후속 작업을 위한 API Endpoint 를 함께 반환하는 것
 - 원하는 만큼의 후속 작업을 위한 Endpoint 를 반환할 수 있다.
+
+## Response Data Custom
+
+- 응답 데이터의 키 값을 변경할 수 있다.
+- 응답 데이터의 필터를 조정할 수 있다.
