@@ -1,0 +1,1 @@
+INSERT INTO _USER(id, name, birth_day) VALUES(1001, 'EEee', current_date())
