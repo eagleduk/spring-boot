@@ -61,3 +61,4 @@
 - Response Data Custom
 - Server Status Informations
 - docker postgres
+- Authorization
