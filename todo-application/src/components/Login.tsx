@@ -12,7 +12,7 @@ export default function Login() {
 
     function handleSubmit() {
         if(name === "user" && password === "password"){
-            login();
+            login(name);
             navigate(`/welcome/${name}`)
         }
     }

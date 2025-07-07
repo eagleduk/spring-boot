@@ -4,7 +4,7 @@ import AuthContext from "../auth/AuthContext"
 
 
 export default function Header() {
-    const {auth, logout} = useContext(AuthContext)
+    const {auth, logout, username} = useContext(AuthContext)
 
     return (       
         <header className="border-bottom border-light border-5 mb-5 p-2">
@@ -17,7 +17,7 @@ export default function Header() {
                                 {auth && 
                                 <>
                                 <li className="nav-item fs-5">
-                                    <Link className="nav-link" to="/welcome/in28minutes">
+                                    <Link className="nav-link" to={`/welcome/${username}`}>
                                     Home
                                     </Link>
                                 </li>

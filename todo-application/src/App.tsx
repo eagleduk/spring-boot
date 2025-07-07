@@ -5,8 +5,9 @@ import Login from "./components/Login";
 import Welcome from "./components/Welcome";
 import TodoList from "./components/todo/TodoList";
 import AuthContext, { AuthProvider } from "./auth/AuthContext";
-import { useContext } from 'react';
+import { useContext, type JSX } from 'react';
 import NotFound from './NotFound';
+import Todo from './components/todo/Todo';
 
 function AuthProviderWrapper({children}: {children: JSX.Element}) {
     const {auth} = useContext(AuthContext);
@@ -17,8 +18,6 @@ function AuthProviderWrapper({children}: {children: JSX.Element}) {
 }
 
 function App() {
-
-  const {auth} = useContext(AuthContext);
 
   return (
     <div className="App">
@@ -31,6 +30,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/welcome/:name" element={<AuthProviderWrapper><Welcome /></AuthProviderWrapper>} />
               <Route path="/todos" element={<AuthProviderWrapper><TodoList /></AuthProviderWrapper>} />
+              <Route path="/todos/:id" element={<AuthProviderWrapper><Todo /></AuthProviderWrapper>} />
 
               <Route path="/*" element={<NotFound />} />
           </Routes>
