@@ -27,17 +27,18 @@ public class TodoController {
     }
 
     @PostMapping("/users/{username}/todos")
-    public ResponseEntity<?> createTodo(Todo todo) {
-        Todo newTodo = todoService.addTodo(todo.getUsername(), todo.getDescription(), todo.getTargetDate(), todo.isDone());
+    public ResponseEntity<?> createTodo(@PathVariable String username, @RequestBody Todo todo) {
+        Todo newTodo = todoService.addTodo(username, todo.getDescription(), todo.getTargetDate(), todo.isDone());
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newTodo.getId()).toUri();
         return ResponseEntity.created(location).build();
     }
 
     @PutMapping("/users/{username}/todos/{id}")
-    public ResponseEntity<?> updateTodo(@PathVariable String username, @PathVariable int id, Todo todo) {
+    public ResponseEntity<?> updateTodo(@PathVariable String username, @PathVariable int id, @RequestBody Todo todo) {
         todo.setId(id);
         todoService.updateTodo(todo);
-        return ResponseEntity.noContent().build();
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().build().toUri();
+        return ResponseEntity.created(location).build();
     }
 
     @DeleteMapping("/users/{username}/todos/{id}")

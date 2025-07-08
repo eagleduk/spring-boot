@@ -22,3 +22,11 @@ export function getTodoById(username: string, id: string) {
 export function deleteTodosById(username: string, id: string) {
     return https.delete(`/users/${username}/todos/${id}`);
 }
+
+export function updateTodoById(username: string, id: string, todo: {id: number, description: string, targetDate: string, done: boolean}) {
+    return https.put(`/users/${username}/todos/${id}`, todo);   
+}
+
+export function createNewTodo(username: string, todo: {id: number, description: string, targetDate: string, done: boolean}) {
+    return https.post(`/users/${username}/todos`, todo);   
+}

@@ -62,6 +62,8 @@ export default function TodoList() {
                     ))}
                 </tbody>
             </table>
+
+            <button className="btn btn-primary" onClick={() => navigate("/todos/0")}>Add Todo</button>
         </div>
     )
 }

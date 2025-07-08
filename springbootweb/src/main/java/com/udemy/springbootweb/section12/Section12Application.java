@@ -19,7 +19,6 @@ public class Section12Application {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				System.out.println("EFEFEJIFEO");
 				registry.addMapping("/**")
 						.allowedMethods("*")
 						.allowedOrigins("http://localhost:5173");

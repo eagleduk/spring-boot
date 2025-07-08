@@ -5,7 +5,9 @@ import java.time.LocalDate;
 public class Todo {
 
 	public Todo() {
-		
+		this.description = "";
+		this.targetDate = LocalDate.now();
+		this.done = false;
 	}
 	
 	public Todo(int id, String username, String description, LocalDate targetDate, boolean done) {
