@@ -80,3 +80,4 @@
 
 - Todo Application
 - Axios
+- Session Policy

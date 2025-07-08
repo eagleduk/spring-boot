@@ -7,6 +7,14 @@ const https = axios.create({
     }
 });
 
+export function loginService(token: string) {
+    return https.get(`/login`, {
+        headers: {
+            "Authorization": `Basic ${token}`
+        }
+    })
+}
+
 export function callHelloWorldPathVariable(name: string) {
     return https.get(`/hello-world/path-variable/${name}`);
 }
