@@ -22,7 +22,6 @@ export default function Todo() {
         getTodoById(username, id)
             .then(response => setTodo(response.data))
             .catch(error => console.log(error))
-            .finally(() => console.log("finally"))
     }, [username, id]);
 
     function changeDescriptionHandler(event: React.ChangeEvent<HTMLInputElement>) {
@@ -31,14 +30,11 @@ export default function Todo() {
     } 
     function changeTargetDateHandler(event: React.ChangeEvent<HTMLInputElement>) {
         if(!todo) return;
-        console.log(event.currentTarget.value);
         setTodo({...todo, targetDate: (event.currentTarget.value)})
 
-        console.log(todo);
     } 
     function changeDoneHandler(event: React.ChangeEvent<HTMLInputElement>) {
         if(!todo) return;
-        console.log(event.target.checked);
         setTodo({...todo, done: event.target.checked})
     }
 
@@ -47,7 +43,6 @@ export default function Todo() {
         createNewTodo(username, todo)
             .then(() => setMessage("Create Successful"))
             .catch(error => console.log(error))
-            .finally(() => console.log("finally"))
     }
 
     function updateTodo() {
@@ -55,7 +50,6 @@ export default function Todo() {
         updateTodoById(username, id, todo)
             .then(() => setMessage("Update Successful"))
             .catch(error => console.log(error))
-            .finally(() => console.log("finally"))
     }
 
     return (

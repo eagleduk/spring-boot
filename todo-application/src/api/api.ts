@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const https = axios.create({
+export const https = axios.create({
     baseURL: "http://localhost:8080",
     headers: {
         "Content-Type": "application/json",

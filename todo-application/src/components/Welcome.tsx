@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function Welcome() {
 
-   const {name} = useParams()
+   const {name} = useParams();
 
    const [message ,setMessage] = useState<string | null>(null);
 
@@ -14,7 +14,6 @@ export default function Welcome() {
     callHelloWorldPathVariable(name)
         .then(response => setMessage(response.data.message))
         .catch(error => console.log(error))
-        .finally(() => console.log("finally"))
    }
 
     return (

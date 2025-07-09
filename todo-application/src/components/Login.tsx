@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import AuthContext from "../auth/AuthContext";
+import { useNavigate } from "react-router";
 
 export default function Login() {
 
@@ -8,8 +9,14 @@ export default function Login() {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
 
-    function handleSubmit() {
-        login(name, password);
+    const navigate = useNavigate();
+
+    async function handleSubmit() {
+        const loginSuccess = await login(name, password);
+
+        if(loginSuccess) {
+            navigate(`/welcome/${name}`);
+        }
     }
 
     return (

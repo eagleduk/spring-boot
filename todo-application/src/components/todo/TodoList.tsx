@@ -16,7 +16,6 @@ export default function TodoList() {
         getTodosByUsername(username)
             .then(response => setTodos(response.data))
             .catch(error => console.log(error))
-            .finally(() => console.log("finally"))
     }, [username]);
 
     function deleteTodo(id: string) {
@@ -24,7 +23,6 @@ export default function TodoList() {
         deleteTodosById(username, id)
             .then(() => getTodos())
             .catch(error => console.log(error))
-            .finally(() => console.log("finally"))
     }
 
     function updateTodo(id: string) {
