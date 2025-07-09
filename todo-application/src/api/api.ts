@@ -15,6 +15,10 @@ export function loginService(token: string) {
     })
 }
 
+export function loginJWTService(username: string, password: string) {
+    return https.post(`/authenticate`, {username, password})
+}
+
 export function callHelloWorldPathVariable(name: string) {
     return https.get(`/hello-world/path-variable/${name}`);
 }

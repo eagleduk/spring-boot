@@ -81,3 +81,4 @@
 - Todo Application
 - Axios
 - Session Policy
+- JWT

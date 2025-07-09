@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 
 export default function Login() {
 
-    const {login} = useContext(AuthContext);
+    const {loginJWT} = useContext(AuthContext);
 
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
@@ -12,7 +12,7 @@ export default function Login() {
     const navigate = useNavigate();
 
     async function handleSubmit() {
-        const loginSuccess = await login(name, password);
+        const loginSuccess = await loginJWT(name, password);
 
         if(loginSuccess) {
             navigate(`/welcome/${name}`);
