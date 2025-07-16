@@ -102,3 +102,4 @@
 - CSRF
 - CORS
 - User Authentication
+- Password Encoder
