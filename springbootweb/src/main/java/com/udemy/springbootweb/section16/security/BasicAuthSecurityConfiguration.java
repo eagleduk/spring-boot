@@ -1,14 +1,14 @@
 package com.udemy.springbootweb.section16.security;
 
-import jakarta.servlet.http.HttpFilter;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.CsrfConfigurer;
-import org.springframework.security.config.annotation.web.configurers.HttpBasicConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -46,4 +46,20 @@ public class BasicAuthSecurityConfiguration {
             }
         };
     }
+
+    @Bean
+    public UserDetailsService userDetails() {
+        var admin = User.builder().username("admin")
+                .password("{noop}admin")
+                .roles("ADMIN")
+                .build();
+
+        var user = User.builder().username("user")
+                .password("{noop}user")
+                .roles("USER")
+                .build();
+
+        return new InMemoryUserDetailsManager(admin, user);
+    }
+
 }

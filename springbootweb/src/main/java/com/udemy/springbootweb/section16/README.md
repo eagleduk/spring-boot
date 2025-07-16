@@ -12,3 +12,7 @@
 
 - 도메인 간 허용되는 요청을 설정
 - 글로벌 설정, URL 별 설정을 할 수 있다.
+
+## User Authentication
+
+- In Memory
