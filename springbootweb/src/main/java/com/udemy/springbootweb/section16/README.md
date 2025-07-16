@@ -16,3 +16,4 @@
 ## User Authentication
 
 - In Memory
+- In Database

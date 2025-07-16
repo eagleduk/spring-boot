@@ -5,13 +5,16 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.CsrfConfigurer;
+import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import javax.sql.DataSource;
 
 @Configuration
 public class BasicAuthSecurityConfiguration {
@@ -27,7 +30,9 @@ public class BasicAuthSecurityConfiguration {
                 // Session 설정
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 // Csrf 보안 해제
-                .csrf(CsrfConfigurer::disable);
+                .csrf(CsrfConfigurer::disable)
+                // H2-console 사용 위한 설정
+                .headers(httpSecurityHeadersConfigurer -> httpSecurityHeadersConfigurer.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
 
         return http.build();
     }
@@ -47,19 +52,38 @@ public class BasicAuthSecurityConfiguration {
         };
     }
 
-    @Bean
-    public UserDetailsService userDetails() {
-        var admin = User.builder().username("admin")
-                .password("{noop}admin")
-                .roles("ADMIN")
-                .build();
+//    @Bean
+//    public UserDetailsService userDetails() {
+//        var admin = User.builder().username("admin")
+//                .password("{noop}admin")
+//                .roles("ADMIN")
+//                .build();
+//
+//        var user = User.builder().username("user")
+//                .password("{noop}user")
+//                .roles("USER")
+//                .build();
+//
+//        return new InMemoryUserDetailsManager(admin, user);
+//    }
 
-        var user = User.builder().username("user")
+    @Bean
+    public UserDetailsService userDetailService(DataSource dataSource) {
+
+        var user = User.withUsername("user")
                 .password("{noop}user")
                 .roles("USER")
                 .build();
 
-        return new InMemoryUserDetailsManager(admin, user);
-    }
+        var admin = User.withUsername("admin")
+                .password("{noop}admin")
+                .roles("ADMIN", "USER")
+                .build();
 
+        var jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);
+        jdbcUserDetailsManager.createUser(user);
+        jdbcUserDetailsManager.createUser(admin);
+
+        return jdbcUserDetailsManager;
+    }
 }
