@@ -10,6 +10,8 @@ import org.springframework.security.config.annotation.web.configurers.CsrfConfig
 import org.springframework.security.config.annotation.web.configurers.HttpBasicConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class BasicAuthSecurityConfiguration {
@@ -28,5 +30,20 @@ public class BasicAuthSecurityConfiguration {
                 .csrf(CsrfConfigurer::disable);
 
         return http.build();
+    }
+
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            public void addCorsMappings(CorsRegistry registry) {
+                registry
+                        // 허용하고자 하는 URL
+                        .addMapping("/**")
+                        // 허용하고자 하는 Method
+                        .allowedMethods("*")
+                        // 허용하고자 하는 도메인
+                        .allowedOrigins("http://localhost:3000");
+            }
+        };
     }
 }
