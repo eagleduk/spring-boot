@@ -103,3 +103,4 @@
 - CORS
 - User Authentication
 - Password Encoder
+- JWT Authentication

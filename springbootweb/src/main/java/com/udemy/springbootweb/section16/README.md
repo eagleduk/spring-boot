@@ -23,3 +23,11 @@
 - `Encoding`: 데이터를 다른 형식으로 변환하는 것. 데이터를 압축하거나 스트리밍할 때 사용.
 - `Hashing`: 데이터를 해시 문자열로 변환. 해시에서 원래 데이터 구할 수 없다. 데이터 무결성 검증시 사용. **패스워드 저장 시 사용.**
 - `Encryption`: 키나 패스워드를 사용해 데이터를 인코딩하고 복호화.
+
+## JWT Authentication
+
+1. JWT 생성
+1. 요청 header에 JWT 전송
+1. JWT 검증 및 설정
+  - Key Pair 생성 -> Key Pair를 이용한 RSA Key 생성 -> RSA Key 를 이용한 JWKSource 생성
+  - RSA 공개키 복호화
