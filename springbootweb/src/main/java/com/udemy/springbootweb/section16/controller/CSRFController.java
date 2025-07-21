@@ -3,6 +3,8 @@ package com.udemy.springbootweb.section16.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,6 +31,8 @@ public class CSRFController {
     }
 
     @GetMapping("/list/{index}")
+    @PreAuthorize("hasRole('USER') and #username == authentication.name")
+    @PostAuthorize("returnObject.username == 'username'")
     public String getIndexString(@PathVariable int index) {
         return lists.get(index);
     }

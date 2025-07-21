@@ -31,3 +31,20 @@
 1. JWT 검증 및 설정
   - Key Pair 생성 -> Key Pair를 이용한 RSA Key 생성 -> RSA Key 를 이용한 JWKSource 생성
   - RSA 공개키 복호화
+
+## Allows
+
+1. 전역적인 권한 설정
+2. EndPoint별 권한 설정
+   - Pre, Post Auth Annotations
+   - JSR-250 annotation
+   
+      > @EnableMethodSecurity(jsr250Enabled=true)
+      > 
+      > @RolesAllowd({"ADMIN","USER"})
+   
+   - @Secured annotation
+
+      > @EnabledMethodSecurity(securedEnabled = true)
+      > 
+      > @Secured({"ROLE_ADMIN", "ROLE_USER"})

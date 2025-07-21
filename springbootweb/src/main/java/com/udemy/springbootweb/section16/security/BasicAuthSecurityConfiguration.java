@@ -3,6 +3,7 @@ package com.udemy.springbootweb.section16.security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.CsrfConfigurer;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
@@ -17,7 +18,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.sql.DataSource;
 
-//@Configuration
+@Configuration
+// Endpoint별 권한 설정
+@EnableMethodSecurity
 public class BasicAuthSecurityConfiguration {
 
     @Bean
@@ -25,7 +28,11 @@ public class BasicAuthSecurityConfiguration {
 
         http
                 // security 가 제공하는 /login, /logout 페이지 접근 해제 (Form 인증 해제)
-                .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
+                .authorizeHttpRequests(auth -> auth
+                        // 전역적 권한 설정
+                        .requestMatchers("/list/**").hasRole("USER")
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .anyRequest().authenticated())
                 // Basic 인증 사용
                 .httpBasic(Customizer.withDefaults())
                 // Session 설정
