@@ -17,7 +17,7 @@ public class LoggingAspect {
 
     // Pointcut - When
     // execution(* PACKAGE.*.*(..))
-    @Before("execution(* com.udemy.springbootweb.section17.aop.*.*.*(..))")
+    @Before("com.udemy.springbootweb.section17.aop.aspects.CommonPointcutDefine.commonPointcut()")
     public void logBeforeMethodCall(/* Join Point */JoinPoint joinPoint) {
 
         // Advice - What

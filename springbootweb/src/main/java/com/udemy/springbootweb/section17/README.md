@@ -21,3 +21,7 @@
 | `@AfterReturning` | 메소드가 성공적으로 수행되고 나서 수행 |
 | `@AfterThrowing`  | 메소드가 익셉션을 던졌을 때 수행    |
 | `@Around` | 메소드 수행 전과 후에 수행 |
+
+### Common Pointcut
+
+- Pointcut 을 공통적으로 정의하여 언제든지 참조할 수 있다.

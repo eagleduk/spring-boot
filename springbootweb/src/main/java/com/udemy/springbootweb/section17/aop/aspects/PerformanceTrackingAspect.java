@@ -13,7 +13,7 @@ public class PerformanceTrackingAspect {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Around("execution(* com.udemy.springbootweb.section17.aop.*.*.*(..))")
+    @Around("com.udemy.springbootweb.section17.aop.aspects.CommonPointcutDefine.commonServicePointcut()")
     public Object trackingLogger(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         long startMillis = System.currentTimeMillis();
 
