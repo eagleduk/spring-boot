@@ -26,5 +26,6 @@ public class Section17Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		logger.info("Max Value:: {} ", businessService1.getMax());
+		logger.info("Min Value:: {} ", businessService1.getMin());
 	}
 }

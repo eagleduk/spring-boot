@@ -47,4 +47,5 @@ public class LoggingAspect {
 
         logger.info("Call Method = {} return: {}", joinPoint, returnObject);
     }
+
 }

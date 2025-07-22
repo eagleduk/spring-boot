@@ -13,4 +13,7 @@ public class CommonPointcutDefine {
 
     @Pointcut("bean(*Service*)")
     public void commonServicePointcut() {}
+
+    @Pointcut("@annotation(com.udemy.springbootweb.section17.aop.annotations.TrackTime)")
+    public void customAnnotation() {}
 }

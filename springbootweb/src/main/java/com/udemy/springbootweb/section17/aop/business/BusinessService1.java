@@ -1,5 +1,6 @@
 package com.udemy.springbootweb.section17.aop.business;
 
+import com.udemy.springbootweb.section17.aop.annotations.TrackTime;
 import com.udemy.springbootweb.section17.aop.data.DataService1;
 import org.springframework.stereotype.Service;
 
@@ -16,5 +17,10 @@ public class BusinessService1 {
 
     public int getMax() {
         return Arrays.stream(dataService1.retrieveData()).max().orElse(0);
+    }
+
+    @TrackTime
+    public int getMin() {
+        return Arrays.stream(dataService1.retrieveData()).min().orElse(Integer.MAX_VALUE);
     }
 }

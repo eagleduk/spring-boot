@@ -13,7 +13,7 @@ public class PerformanceTrackingAspect {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Around("com.udemy.springbootweb.section17.aop.aspects.CommonPointcutDefine.commonServicePointcut()")
+    @Around("execution(* com.udemy.springbootweb.section17.aop.*.*.*(..))")
     public Object trackingLogger(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         long startMillis = System.currentTimeMillis();
 
@@ -22,6 +22,19 @@ public class PerformanceTrackingAspect {
         long endMillis = System.currentTimeMillis();
 
         logger.info("execute method: {}, duration time {}ms", proceedingJoinPoint, endMillis - startMillis);
+
+        return proceed;
+    }
+
+    @Around("com.udemy.springbootweb.section17.aop.aspects.CommonPointcutDefine.customAnnotation()")
+    public Object trackingCustomAnnotationLogger(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        long startMillis = System.currentTimeMillis();
+
+        Object proceed = proceedingJoinPoint.proceed();
+
+        long endMillis = System.currentTimeMillis();
+
+        logger.info("Custom Annotation execute method: {}, duration time {}ms", proceedingJoinPoint, endMillis - startMillis);
 
         return proceed;
     }
