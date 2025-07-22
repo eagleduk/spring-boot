@@ -13,3 +13,11 @@
 | Weaver     | AOP 프레임워크                              |
 | Join Point | 실행 인스턴스                                |
 
+### Annotations
+| Annotation        |                       |
+|:------------------|:----------------------|
+| `@Before`         | 메소드가 수행되기 전에 수행       |
+| `@After`          | 메소드가 수행되고 나서 수행       |
+| `@AfterReturning` | 메소드가 성공적으로 수행되고 나서 수행 |
+| `@AfterThrowing`  | 메소드가 익셉션을 던졌을 때 수행    |
+| `@Around` | 메소드 수행 전과 후에 수행 |
